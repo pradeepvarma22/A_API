@@ -1,0 +1,84 @@
+	
+enum TokenDisplayType {
+	IMAGE
+	VIDEO
+	AUDIO
+	TEXT_IMAGE
+	TEXT
+	JSON
+}
+
+enum NFTTransactionType{
+		BUY
+		MINT
+		SALE
+		GIFT
+} 
+
+enum TokenStandardType {
+	  ERC1155
+	  ERC721
+	  OTHER  #eip-3664
+}
+
+enum Network {
+	  MAINNET
+	  MATIC 
+}
+
+interface EntityStats {
+	  tokenCount: BigInt
+	  transactionsCount: BigInt
+	  extraData: [ExtraData]
+	  lastTxnDate: BigInt!
+}
+
+type ExtraData @entity {
+	  id: ID!
+	  name: String!
+	  value: String!
+}
+
+type UserAccount implements EntityStats @entity {
+	  id: ID!
+	  address: Bytes!
+	  nfts: [Token!]
+	  apitxns: [ApiTransaction!]
+}
+
+type NftTransaction @entity {       # MINT OR BURN OR SALE
+	  id: ID!
+	  hash: Bytes!
+	  type: NFTTransactionType!
+	  to: UserAccount! #Buyer
+	  from: UserAccount! #Seller
+	  transactionToken: Token!
+	  tokenId: BigInt!
+	  paymentAmount: BigInt
+	  fees: BigInt
+	  network: Network!
+}
+
+type Token @entity {
+	  id: ID!
+	  address: Bytes!  #contract Address
+	  standard: TokenStandardType!
+	  name: String
+	  symbol: String
+	  price: BigInt!
+	  tokenMetaData: TokenMetadata
+}
+	
+type TokenMetadata @entity(immutable: true) {
+	  id: ID!
+	  displayContentType: TokenDisplayType!
+	  displayContent: String
+}
+
+type ApiTransaction @entity{
+		id: ID!
+		owner: UserAccount!
+		hash: Bytes!
+		price: BigInt!
+		isActive: Boolean!
+}	
