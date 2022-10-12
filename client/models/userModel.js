@@ -1,0 +1,14 @@
+import { Schema, model, models } from "mongoose"
+
+const userSchema = new Schema({
+    walletAddress: {
+        type: String,
+        required: true,
+        unique: true 
+    },
+    isApiActive: Boolean,
+    apiKey: String
+
+});
+
+export const User = models.User || model('User', userSchema) 

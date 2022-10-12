@@ -1,7 +1,6 @@
 import ConnectToWallet from "../wallet/ConnectToWallet"
 
-
-export default function Header({walletState,walletDispatch})
+export default function Header({walletState,walletDispatch,aapiState, aapiDispatch})
 {
     return(
         <div>
@@ -10,7 +9,7 @@ export default function Header({walletState,walletDispatch})
                     <div>{walletState.walletAddress}</div>
                 ):(
                     <div>
-                        <ConnectToWallet walletState={walletState} walletDispatch={walletDispatch} />
+                        <ConnectToWallet walletState={walletState} walletDispatch={walletDispatch} aapiState={aapiState} aapiDispatch={aapiDispatch} />
                     </div>
                 )
             

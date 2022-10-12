@@ -15,10 +15,10 @@ contract DDB is Ownable{
     }
 
     function setApi() public payable{
-        require(users[msg.sender],"Please Login" );
         require(msg.value > 0.00001 ether, "Insufficent amount");
         require(timestamp[msg.sender] < block.timestamp,"API Exists");
         balances[msg.sender] = msg.value;
+		users[msg.sender] = true;
         timestamp[msg.sender] = block.timestamp + 7 days;
         emit UserAPI(msg.sender,msg.value,block.timestamp + 7 days);
     }
@@ -26,14 +26,8 @@ contract DDB is Ownable{
     // central save it to central db
     function getApiStatus() public view returns(bool)
     {
+		require(users[msg.sender],"Get an api");
         return (block.timestamp >  timestamp[msg.sender]);
-    }
-    
-    // if user present no need to call
-    function setUser() external{
-        require(users[msg.sender]==false,"Already present");
-        users[msg.sender] = true;
-        emit UserAdded(msg.sender);
     }
 
     function withdraw() public {
