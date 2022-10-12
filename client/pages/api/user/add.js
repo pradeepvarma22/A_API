@@ -14,7 +14,6 @@ export default async function add(req, res) {
     let user;
 
     const testme =await User.find({walletAddress:req.body.walletAddress}).limit(1);
-    console.log(testme);
 
     if(testme.length > 0)
     {

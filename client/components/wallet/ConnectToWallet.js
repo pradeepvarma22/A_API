@@ -1,12 +1,13 @@
-import { WALLET_OPTIONS } from "../../reducers/wallet/index"
 import { ethers } from "ethers";
+
+import { WALLET_OPTIONS } from "../../reducers/wallet/index"
 
 export default function ConnectToWallet({ walletState, walletDispatch }) {
 
 
 
     async function connect() {
-
+        
         if (window.ethereum) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = await provider.getSigner();
@@ -27,6 +28,10 @@ export default function ConnectToWallet({ walletState, walletDispatch }) {
                     })
                 }
             )
+            const dt = await res.json()
+
+            walletDispatch({ type: WALLET_OPTIONS.SET_USER_API_ID, payload: dt._id })
+            walletDispatch({ type: WALLET_OPTIONS.SET_USER_API_KEY, payload: dt.apiKey })
 
         }
         else {

@@ -4,21 +4,20 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DDB is Ownable{
     
-    mapping (address => bool) public users;  
-    event UserAdded(address indexed user);
+    mapping (address => bool) public isPaid;  
     event UserAPI(address indexed user, uint256 cost,uint256 expired);
-    mapping(address => uint256) private balances;
-    mapping(address => uint256) private timestamp;  // time
+    mapping(address => uint256) public balances;
+    mapping(address => uint256) public timestamp;  // time
 
     constructor() Ownable() {
 
     }
 
     function setApi() public payable{
-        require(msg.value > 0.00001 ether, "Insufficent amount");
-        require(timestamp[msg.sender] < block.timestamp,"API Exists");
+        require(msg.value >= 0.001 ether, "Insufficent amount");
+        require(getApiStatus() == false,"API Exists");
         balances[msg.sender] = msg.value;
-		users[msg.sender] = true;
+		isPaid[msg.sender] = true;
         timestamp[msg.sender] = block.timestamp + 7 days;
         emit UserAPI(msg.sender,msg.value,block.timestamp + 7 days);
     }
@@ -26,8 +25,7 @@ contract DDB is Ownable{
     // central save it to central db
     function getApiStatus() public view returns(bool)
     {
-		require(users[msg.sender],"Get an api");
-        return (block.timestamp >  timestamp[msg.sender]);
+        return (isPaid[msg.sender] && block.timestamp <  timestamp[msg.sender]);
     }
 
     function withdraw() public {
@@ -35,11 +33,6 @@ contract DDB is Ownable{
         require(msg.sender == owner(), "You aren't the owner");
 
         payable(owner()).transfer(address(this).balance);
-    }
-
-    function getTimeStamp() public view returns(uint256)
-    {
-        return block.timestamp;
     }
 
 }
