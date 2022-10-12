@@ -16,7 +16,7 @@ export default function Dashboard({ walletState, walletDispatch }) {
         const contractSigner = new ethers.Contract(AAPI_CONTRACT_ADDRESS, AAPI_CONTRACT_ABI, walletState.signer);
         const apiStatus = await contractSigner.getApiStatus()
         aapiDispatch({ type: AAPI_OPTIONS.API_STATUS, payload: apiStatus })
-        
+
     }
 
     async function onLoad() {
@@ -69,7 +69,7 @@ export default function Dashboard({ walletState, walletDispatch }) {
             <div>
                 {aapiState.apiStatus ? (
                     <div>
-                        Your API Key {walletState.userApiKey}
+                        Your API Key {`https://airclone-gules.vercel.app/api/graphql/validate/${walletState.userApiKey}`}
                     </div>
                 ) : (
                     <div>
@@ -78,7 +78,6 @@ export default function Dashboard({ walletState, walletDispatch }) {
                     </div>
                 )}
             </div>
-
         </div>
     )
 }
