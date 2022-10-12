@@ -42,7 +42,7 @@ export default function ConnectToWallet({ walletState, walletDispatch }) {
 
     return (
         <div>
-            <button onClick={connect}>Connect to Wallet</button>
+            <button className="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300" onClick={connect}>Connect to Wallet</button>
         </div>
     )
 
