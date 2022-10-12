@@ -1,3 +1,4 @@
+import { User } from '../../../models/userModel';
 /**
  * 
  * @param {import('next').NextApiRequest} req 
@@ -5,26 +6,25 @@
  */
 import connectdb from '../../../utility/db/connectdb'
 
-import { User } from '../../../models/userModel';
-
 export default async function add(req, res) {
 
     const { walletAddress_1 } = req.body
     await connectdb();
 
     let user;
-    const testme = await User.exists();
 
-    if(testme)
+    const testme =await User.find({walletAddress:req.body.walletAddress}).limit(1);
+    console.log(testme);
+
+    if(testme.length > 0)
     {
-        user = testme;
+        user = testme[0];
     }
     else
     {
-        user = await User.create(req.body);
+        user = await User.create({walletAddress:req.body.walletAddress, isApiActive: false, apiKey: ""});
     }
 
     res.status(200).json(user)
-
 
 }
