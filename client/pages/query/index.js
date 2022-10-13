@@ -25,7 +25,7 @@ const defaultQuery = `{
 export default function Query() {
 
     const [graphName, setGraphName] = useState()
-    const [apiKey, setApiKey] = useState("http://localhost:3000/api/graphql/validate/rnsstsatrHatth.aniaattiit")
+    const [apiKey, setApiKey] = useState("https://airclone-gules.vercel.app/api/graphql/validate/rnsstsatrHatth.aniaattiit")
     const [myQuery, setMyQuery] = useState(defaultQuery)
     const [queryData, setQueryData] = useState([])
     const editorRef = useRef(null);
