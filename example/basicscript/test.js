@@ -13,7 +13,7 @@ const myQuery = `
 `
 
 async function main() {
-    const res = await fetch(API_KEY_QA, {
+    const res = await fetch(API_KEY_PROD, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

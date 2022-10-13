@@ -65,13 +65,10 @@ export default function Dashboard({ walletState, walletDispatch }) {
                 })
             }
             )
+            walletDispatch({ type: WALLET_OPTIONS.SET_USER_API_KEY, payload: keyGen })
         }
         const data = await res.json()
         console.log(data)
-        if(res.ok)
-        {
-            walletDispatch({ type: WALLET_OPTIONS.SET_USER_API_KEY, payload: keyGen })
-        }
 
         onLoad();
         aapiDispatch({ type: AAPI_OPTIONS.SET_LOADING_TXN, payload: false })

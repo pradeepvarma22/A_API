@@ -16,7 +16,7 @@ const config: HardhatUserConfig = {
     }
   },
   solidity: {
-    version: "0.8.17"
+    version: "0.8.11"
   },
   paths: {
     artifacts: "./temp/src/artifacts",
