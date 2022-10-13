@@ -25,7 +25,7 @@ const defaultQuery = `{
 export default function Query() {
 
     const [graphName, setGraphName] = useState()
-    const [apiKey, setApiKey] = useState("https://airclone-gules.vercel.app/api/graphql/validate/rnsstsatrHatth.aniaattiit")
+    const [apiKey, setApiKey] = useState("")
     const [myQuery, setMyQuery] = useState(defaultQuery)
     const [queryData, setQueryData] = useState([])
     const editorRef = useRef(null);
@@ -51,7 +51,7 @@ export default function Query() {
 
         const jsonData = await res.json()
 
-        const finalStrData = JSON.stringify(jsonData,undefined,2)
+        const finalStrData = JSON.stringify(jsonData, undefined, 2)
         setQueryData(finalStrData)
 
 
@@ -116,6 +116,7 @@ export default function Query() {
                         </div>
                     </div>
                 </div>
+                <div className='p-2'> API Key for Testing: https://airclone-gules.vercel.app/api/graphql/validate/rnsstsatrHatth.aniaattiit</div>
 
             </div>
 
