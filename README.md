@@ -8,4 +8,5 @@ APIs for on-chain data.
 ## Query Editor
 <br/>
 
-![Screenshot (81)](https://user-images.githubusercontent.com/28341697/195534591-cf6c4842-18f6-449f-830d-c09e388cca8d.png)
+
+![Screenshot (82)](https://user-images.githubusercontent.com/28341697/195563230-056174f1-4ca5-4dcf-b856-be913eb25d1e.png)
