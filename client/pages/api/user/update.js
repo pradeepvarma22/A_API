@@ -15,7 +15,7 @@ export default async function add(req, res) {
 
     let user;   
 
-    // const testme = await User.find({ walletAddress: req.body.walletAddress }).limit(1);
+    const testme = await User.find({ walletAddress: req.body.walletAddress }).limit(1);
 
     User.findOneAndUpdate({walletAddress:walletAddress},{isApiActive: true, apiKey: keyGen},(error, data)=>{
         if(error)
@@ -26,6 +26,6 @@ export default async function add(req, res) {
 
     
 
-    res.status(200);
+    res.status(200).json(testme);
 
 }

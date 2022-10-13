@@ -6,6 +6,7 @@ const aapiReducer = (state, action) => {
         case AAPI_OPTIONS.API_KEY: return {...state,apiKey:action.payload };
         case AAPI_OPTIONS.ERROR: return { ...state, error: true, errorMessage: action.payload };
         case AAPI_OPTIONS.SET_LOADING: return { ...state, loading: action.payload };
+        case AAPI_OPTIONS.SET_LOADING_TXN: return { ...state, loadingOntxn: action.payload };
 
         default: return state;
     }
@@ -13,6 +14,7 @@ const aapiReducer = (state, action) => {
 
 const AAPI_INITIAL_STATE = {
     loading: false,
+    loadingOntxn:false,
     apiStatus: false,
     apiKey: "",
     error: false,
@@ -24,7 +26,8 @@ const AAPI_OPTIONS = {
     API_STATUS: 'API_STATUS',
     API_KEY:'API_KEY',
     ERROR: 'ERROR',
-    SET_LOADING: 'SET_LOADING'
+    SET_LOADING: 'SET_LOADING',
+    SET_LOADING_TXN: 'SET_LOADING_TXN'
 }
 
 
