@@ -6,13 +6,13 @@ AS. APIs enable easy querying of indexed data across projects and blockchains.
 <li>grapgql query editor</li>
 
 ## Links:
-Deployed URL: <a href="https://airclone-gules.vercel.app">https://airclone-gules.vercel.app</a>  
-Verified Smart Contract: <a href="https://mumbai.polygonscan.com/address/0x3126998321b2a77691ceb85d8e4440ae5dad24d9#code" target="_blank">Link</a>
-Schema: <a href="https://github.com/pradeepvarma22/A_API/blob/master/subgraphs/schemas/NFT_MARKET_PLACE.graphql" target="_blank">Schema Link</a> <br/>
+<li>Deployed URL: <a href="https://airclone-gules.vercel.app">https://airclone-gules.vercel.app</a></li>  
+<li>Verified Smart Contract: <a href="https://mumbai.polygonscan.com/address/0x3126998321b2a77691ceb85d8e4440ae5dad24d9#code" target="_blank">Link</a></li>
+<li>Schema: <a href="https://github.com/pradeepvarma22/A_API/blob/master/subgraphs/schemas/NFT_MARKET_PLACE.graphql" target="_blank">Schema Link</a> <br/></li>
 
 ## Todo
-standard NFT and DEFI subgraphs.<br/>
-<b>Improve Graphql Schema</b>    <a href="https://github.com/pradeepvarma22/A_API/blob/master/subgraphs/schemas/NFT_MARKET_PLACE.graphql" target="_blank">Schema Link</a> <br/>
+<li>standard NFT and DEFI subgraphs.</li>
+<li><a href="https://github.com/pradeepvarma22/A_API/blob/master/subgraphs/schemas/NFT_MARKET_PLACE.graphql" target="_blank">Improve Graphql Schema</a></li>
 
 
 ## Working Video
