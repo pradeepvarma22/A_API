@@ -5,6 +5,7 @@ import { useReducer } from 'react'
 import Dashboard from "../components/dashboard/Dashboard"
 import Header from "../components/mainpage/Header"
 import { WALLET_INITIAL_STATE, WALLET_OPTIONS, walletReducer } from "../reducers/wallet/index"
+import HomeSection from "../components/HomeSection/index"
 
 export default function Home() {
 
@@ -20,11 +21,13 @@ export default function Home() {
       <div>
         {walletState.isWalletConnected == true ? (
           <div>
-            Hello
-              <Dashboard walletState={walletState} walletDispatch={walletDispatch}/>
+
+            <Dashboard walletState={walletState} walletDispatch={walletDispatch} />
           </div>
         ) : (
-          <div></div>
+          <div>
+            {/* <HomeSection/> */}
+          </div>
         )}
       </div>
 

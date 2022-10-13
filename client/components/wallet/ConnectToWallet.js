@@ -17,7 +17,7 @@ export default function ConnectToWallet({ walletState, walletDispatch }) {
             walletDispatch({ type: WALLET_OPTIONS.IS_WALLET_CONNECTED, payload: true })
             walletDispatch({ type: WALLET_OPTIONS.PROVIDER, payload: provider })
             walletDispatch({ type: WALLET_OPTIONS.SIGNER, payload: signer })
-
+            
             const res = await fetch("/api/user/add", {
                     method: 'POST',
                     headers: {

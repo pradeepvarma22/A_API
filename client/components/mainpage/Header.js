@@ -43,7 +43,8 @@ export default function Header({ walletState, walletDispatch, aapiState, aapiDis
 
             {walletState.isWalletConnected == false ? (
                 <div className="py-32 text-center">
-                    <h2 className="font-extrabold text-4xl">APIs for on-chain data.!</h2>
+                    <h2 className="font-extrabold text-4xl">APIs for on-chain data.! </h2>
+                    <div className='py-2 animate-pulse'>AS APIs enable easy querying across projects and blockchains</div>
 
 
                     <div className="p-5">
