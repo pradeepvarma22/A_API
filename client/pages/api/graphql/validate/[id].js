@@ -10,11 +10,16 @@ import connectdb from '../../../../utility/db/connectdb'
 */
 
 export default async function validateMe(req, res) {
+    const { myQuery, graphName } = req.body
 
     await connectdb();
     const { id } = req.query
     const apiKey = id
     const isUserActive = await User.find({ apiKey: apiKey });
+
+    console.log(myQuery)
+    console.log(graphName)
+
 
     if (isUserActive.length == 0) {
         res.status(400).json({ "error": "invalid api key" })
@@ -34,11 +39,11 @@ export default async function validateMe(req, res) {
 
 
     // get This Data from req.body.requestedQuery
-    const requestedQuery = `{
-        userAccounts{
-            address
-        }
-    }`
+    // const requestedQuery = `{
+    //     userAccounts{
+    //         address
+    //     }
+    // }`
 
     // get subgraph url from here
     const subgraphURL = "https://api.thegraph.com/subgraphs/name/pradeepvarma22/usdt"
@@ -48,7 +53,7 @@ export default async function validateMe(req, res) {
         subgraphURL,
         {
             query: `
-            ${requestedQuery}
+            ${myQuery}
           `
         }
     );
@@ -56,7 +61,7 @@ export default async function validateMe(req, res) {
 
 
 
-    res.status(200).json((result.data.data.userAccounts))
+    res.status(200).json(result.data.data)
 }
 
 /*
