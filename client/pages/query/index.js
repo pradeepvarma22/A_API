@@ -60,7 +60,7 @@ export default function Query() {
                 <div className='grid grid-rows-2 '>
                     <div className='border-2 border-rose-500'>
                         <div className='p-1'>
-                            <button type="button" class="text-white bg-gray-800 hover:bg-gray-900  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Query</button>
+                            <button type="button" className="text-white bg-gray-800 hover:bg-gray-900  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Query</button>
                         </div>
                         <div>
 
@@ -69,9 +69,9 @@ export default function Query() {
                     <div className='border-2 border-rose-500'>
                         <div className='p-2 text-xl underline'>API Details</div>
                         <div className="flex justify-center items-center py-16">
-                            <div class="w-full max-w-sm grid grid-rows-2 gap-3">
-                                <div class="flex items-center border-b border-teal-500 py-2">
-                                    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Please Enter AS API Here" value="http://localhost:3000/api/graphql/validate/rnsstsatrHatth.aniaattiit" />
+                            <div className="w-full max-w-sm grid grid-rows-2 gap-3">
+                                <div className="flex items-center border-b border-teal-500 py-2">
+                                    <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Please Enter AS API Here" defaultValue="http://localhost:3000/api/graphql/validate/rnsstsatrHatth.aniaattiit" />
                                 </div>
                                 <div>
                                     <div>
