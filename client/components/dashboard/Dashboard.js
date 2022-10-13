@@ -116,17 +116,14 @@ export default function Dashboard({ walletState, walletDispatch }) {
                                                                                 <p className="ml-4">API Key: {walletState.userApiKey}</p>
                                                                             </li>
 
-                                                                            <div onClick={() => { navigator.clipboard.writeText(`https://airclone-gules.vercel.app/api/graphql/validate/${walletState.userApiKey}`); alert('Copied!!!!') }}>
-                                                                                <div className="underline text-base">
-                                                                                Copy
+                                                                            <div className='cursor-copy' onClick={() => { navigator.clipboard.writeText(`https://airclone-gules.vercel.app/api/graphql/validate/${walletState.userApiKey}`); alert('Copied!!!!') }}>
+                                                                                <div className="underline text-base text-xs">
+                                                                                    Copy
                                                                                 </div>
                                                                                 <div className='text-xs animate' >
                                                                                     {`https://airclone-gules.vercel.app/api/graphql/validate/${walletState.userApiKey}`}
                                                                                 </div>
                                                                             </div>
-
-
-
                                                                         </ul>
                                                                     </div>
                                                                     <div className="pt-8 text-base font-semibold leading-7">
