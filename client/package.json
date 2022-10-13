@@ -9,14 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.4.6",
+    "@zeit/next-css": "^1.0.1",
     "axios": "^1.1.2",
     "ethers": "^5.7.1",
     "generate-api-key": "^1.0.2",
+    "graphql": "^16.6.0",
+    "monaco-editor-webpack-plugin": "^7.0.1",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "next": "12.3.1",
+    "next-transpile-modules": "^9.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-monaco-editor": "^0.50.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
