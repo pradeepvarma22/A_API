@@ -3,7 +3,7 @@ AS. APIs enable easy querying of indexed data across projects and blockchains.
 
 ## Features:
 <li>Provide API to query blockchain data</li>
-<li>grapgql query editor</li>
+<li>graphql query editor</li>
 
 ## Links:
 <li>Deployed URL: <a href="https://airclone-gules.vercel.app">https://airclone-gules.vercel.app</a></li>  
